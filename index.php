@@ -4,6 +4,7 @@
     <div class="container">
         <h1>Hỗ Trợ Vay Tiền Mặt Tại Quảng Ngãi</h1>
         <p><?php echo $contactConfig['slogan']; ?></p>
+        <p class="hero-subtitle">👉 “Giải pháp tư vấn tài chính cá nhân minh bạch & uy tín”</p>
         <a href="#lien-he" class="btn-primary"><i class="fas fa-paper-plane"></i> Đăng Ký Ngay</a>
     </div>
 </section>
@@ -24,6 +25,33 @@
         <h3>Bảo Mật</h3>
         <p>Thông tin khách hàng được bảo mật tuyệt đối.</p>
     </div>
+</section>
+
+<section class="container content-block">
+    <h2 class="section-title">Bảng Lãi Suất & Hạn Mức</h2>
+    <div class="table-responsive">
+        <table class="table-loan">
+            <thead>
+                <tr>
+                    <th>SẢN PHẨM VAY</th>
+                    <th>Lãi suất</th>
+                    <th>Hạn mức</th>
+                    <th>VAY Tối Đa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Lương</td><td>0.83-1.84%</td><td>&lt; 350 triệu</td><td>48 tháng</td></tr>
+                <tr><td>B.Hiểm nhân thọ</td><td>1.2 – 1.76%</td><td>&lt; 160 triệu</td><td>48 tháng</td></tr>
+                <tr><td>Hóa đơn điện</td><td>1.6 – 2.2%</td><td>&lt; 70 triệu</td><td>36 tháng</td></tr>
+                <tr><td>Cavet xe máy</td><td>1.5 – 2.2%</td><td>&lt; 70 triệu</td><td>36 tháng</td></tr>
+                <tr><td>SIM Điện thoại</td><td>1.6 – 2.0%</td><td>&lt; 70 triệu</td><td>36 tháng</td></tr>
+                <tr><td>HĐ Tín chấp cũ</td><td>2.0 ~2.2%</td><td>&lt; 70 triệu</td><td>36 tháng</td></tr>
+                <tr><td>Kinh Doanh</td><td>1.5 – 2.0%</td><td>&lt; 400 triệu</td><td>48 tháng</td></tr>
+                <tr><td>Số dư Tài khoản</td><td>1.3 – 1.6%</td><td>&lt; 100 triệu</td><td>48 tháng</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="note-text">* Lưu ý: Thời gian vay tối thiểu là 6 tháng, tối đa là 48 tháng. Mức vay tối thiểu là 10 triệu, tối đa là 400 triệu cho một lần vay. Lãi suất % hàng năm tối thiểu là 18%/năm và tối đa là 36%/năm</p>
 </section>
 
 <section id="goi-vay" class="loan-packages">

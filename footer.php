@@ -1,3 +1,8 @@
+<?php
+if (!isset($contactConfig) && file_exists('config/contact.php')) {
+    include 'config/contact.php';
+}
+?>
     <footer>
         <div class="container">
             <div class="footer-col">
