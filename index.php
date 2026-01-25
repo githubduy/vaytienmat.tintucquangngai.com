@@ -3,7 +3,7 @@
 <section class="hero">
     <div class="container">
         <h1>Hỗ Trợ Vay Tiền Mặt Tại Quảng Ngãi</h1>
-        <p>Giải ngân nhanh trong ngày - Không thẩm định nhà - Bảo mật thông tin</p>
+        <p><?php echo $contactConfig['slogan']; ?></p>
         <a href="#lien-he" class="btn-primary"><i class="fas fa-paper-plane"></i> Đăng Ký Ngay</a>
     </div>
 </section>
@@ -75,6 +75,42 @@
             <h4>Giải Ngân</h4>
             <p>Nhận tiền qua tài khoản ngân hàng.</p>
         </div>
+    </div>
+</section>
+
+<!-- Thêm nội dung: Điều kiện vay -->
+<section class="container content-block">
+    <h2 class="section-title">Điều Kiện Vay Tín Chấp</h2>
+    <div class="row" style="display: flex; flex-wrap: wrap; gap: 20px;">
+        <div style="flex: 1; min-width: 300px;">
+            <ul style="list-style: none;">
+                <li><i class="fas fa-check-circle" style="color: green;"></i> Công dân Việt Nam độ tuổi từ 20 - 60 tuổi.</li>
+                <li><i class="fas fa-check-circle" style="color: green;"></i> Đang sinh sống và làm việc tại Quảng Ngãi.</li>
+                <li><i class="fas fa-check-circle" style="color: green;"></i> Có CMND/CCCD còn hiệu lực.</li>
+                <li><i class="fas fa-check-circle" style="color: green;"></i> Không có nợ xấu nhóm 3 trở lên (tùy trường hợp).</li>
+                <li><i class="fas fa-check-circle" style="color: green;"></i> Có thu nhập ổn định (tự doanh hoặc đi làm hưởng lương).</li>
+            </ul>
+        </div>
+        <div style="flex: 1; min-width: 300px;">
+            <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600&q=80" alt="Điều kiện vay" style="width: 100%; margin-top: 0;">
+        </div>
+    </div>
+</section>
+
+<!-- Thêm nội dung: FAQ -->
+<section class="container content-block" style="background: #f9f9f9; border-radius: 8px; padding: 30px;">
+    <h2 class="section-title">Câu Hỏi Thường Gặp</h2>
+    <div class="faq-item" style="margin-bottom: 20px;">
+        <h4 style="color: var(--primary-color);"><i class="fas fa-question-circle"></i> Vay tiền có cần thế chấp tài sản không?</h4>
+        <p>Không. Chúng tôi hỗ trợ vay tín chấp 100%, không giữ giấy tờ gốc, không thế chấp tài sản.</p>
+    </div>
+    <div class="faq-item" style="margin-bottom: 20px;">
+        <h4 style="color: var(--primary-color);"><i class="fas fa-question-circle"></i> Thời gian giải ngân bao lâu?</h4>
+        <p>Thông thường hồ sơ được duyệt và giải ngân trong vòng 30 phút đến 2 giờ làm việc.</p>
+    </div>
+    <div class="faq-item">
+        <h4 style="color: var(--primary-color);"><i class="fas fa-question-circle"></i> Nợ xấu có vay được không?</h4>
+        <p>Chúng tôi có hỗ trợ các trường hợp nợ xấu nhóm 1, nhóm 2. Hãy liên hệ để được tư vấn cụ thể.</p>
     </div>
 </section>
 

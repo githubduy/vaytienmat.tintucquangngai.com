@@ -1,3 +1,4 @@
+<?php include 'config/contact.php'; ?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -11,18 +12,19 @@
     <header>
         <div class="top-bar">
             <div class="container">
-                <span><i class="fas fa-phone-alt"></i> Hotline: 0905.xxx.xxx</span>
-                <span><i class="fas fa-envelope"></i> hotro@vaytienquangngai.net</span>
+                <span><i class="fas fa-phone-alt"></i> Hotline: <?php echo $contactConfig['phone_display']; ?></span>
+                <span><i class="fas fa-envelope"></i> <?php echo $contactConfig['email']; ?></span>
+                <span class="header-slogan hidden-mobile"> - <?php echo $contactConfig['slogan']; ?></span>
             </div>
         </div>
         <nav class="navbar">
             <div class="container">
-                <a href="index.php" class="logo"><i class="fas fa-hand-holding-usd"></i> VayNhanhQN</a>
+                <a href="index.php" class="logo"><i class="fas fa-hand-holding-usd"></i> <?php echo $contactConfig['brand']; ?></a>
                 <ul class="nav-links">
                     <li><a href="index.php">Trang chủ</a></li>
-                    <li><a href="#goi-vay">Gói vay</a></li>
-                    <li><a href="#quy-trinh">Quy trình</a></li>
-                    <li><a href="#lien-he">Liên hệ</a></li>
+                    <li><a href="gioi-thieu.php">Giới thiệu</a></li>
+                    <li><a href="dich-vu.php">Gói vay</a></li>
+                    <li><a href="lien-he.php">Liên hệ</a></li>
                 </ul>
             </div>
         </nav>
