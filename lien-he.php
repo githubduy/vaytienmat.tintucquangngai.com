@@ -1,4 +1,8 @@
 <?php include 'header.php'; ?>
+<?php
+$page_title = "Liên Hệ Đặt Lịch - Yến Makeup Artist";
+include 'header.php';
+?>
 
 <div class="page-header">
     <div class="container">
@@ -10,6 +14,10 @@
 <section class="container" style="padding-bottom: 50px;">
     <div style="display: flex; flex-wrap: wrap; gap: 30px;">
         <!-- Thông tin liên hệ -->
+<main class="page-content container">
+    <h2 class="section-title">Liên Hệ & Đặt Lịch</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 40px;">
+        <!-- Contact Info -->
         <div style="flex: 1; min-width: 300px;">
             <h2 style="color: var(--primary-color); margin-bottom: 20px;">Thông Tin Liên Lạc</h2>
             <p style="margin-bottom: 15px;"><i class="fas fa-map-marker-alt" style="color: var(--secondary-color); width: 25px;"></i> <strong>Địa chỉ:</strong> <?php echo $contactConfig['address']; ?></p>
@@ -24,6 +32,15 @@
                     <li>Mọi thông tin tư vấn đều là miễn phí.</li>
                     <li>Cảnh báo lừa đảo: Không chuyển tiền cho bất kỳ ai yêu cầu phí đặt cọc.</li>
                 </ul>
+            <h3>Thông Tin Liên Hệ</h3>
+            <p>Hãy liên hệ với Yến để được tư vấn và đặt lịch sớm nhất cho ngày trọng đại của bạn!</p>
+            <p style="margin: 15px 0;"><i class="fas fa-map-marker-alt"></i> <strong>Địa chỉ:</strong> <?php echo $config['address']; ?></p>
+            <p style="margin-bottom: 15px;"><i class="fas fa-phone"></i> <strong>Hotline:</strong> <a href="tel:<?php echo $config['phone']; ?>"><?php echo $config['phone']; ?></a> (Call/Zalo)</p>
+            <p style="margin-bottom: 15px;"><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:<?php echo $config['email']; ?>"><?php echo $config['email']; ?></a></p>
+            <div class="social-links" style="margin-top: 20px;">
+                <a href="<?php echo $config['facebook_url']; ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="<?php echo $config['instagram_url']; ?>" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="<?php echo $config['tiktok_url']; ?>" target="_blank"><i class="fab fa-tiktok"></i></a>
             </div>
         </div>
 
@@ -40,8 +57,34 @@
                     <button type="submit" class="btn-primary" style="width: 100%; background: var(--secondary-color);">Gửi Hồ Sơ Ngay</button>
                 </form>
             </div>
+        <!-- Contact Form -->
+        <div style="flex: 1.5; min-width: 300px;">
+            <h3>Gửi Yêu Cầu Tư Vấn</h3>
+            <form action="#" method="post" class="contact-form-makeup">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Họ và tên của bạn" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Số điện thoại" required>
+                </div>
+                <div class="form-group">
+                    <select name="service" required>
+                        <option value="">-- Chọn dịch vụ bạn quan tâm --</option>
+                        <option value="Trang điểm cô dâu">Trang điểm cô dâu</option>
+                        <option value="Trang điểm dự tiệc">Trang điểm dự tiệc</option>
+                        <option value="Trang điểm kỷ yếu">Trang điểm kỷ yếu</option>
+                        <option value="Học trang điểm cá nhân">Học trang điểm cá nhân</option>
+                        <option value="Học trang điểm chuyên nghiệp">Học trang điểm chuyên nghiệp</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Nội dung yêu cầu hoặc câu hỏi của bạn..."></textarea>
+                </div>
+                <button type="submit" class="btn">Gửi Yêu Cầu</button>
+            </form>
         </div>
     </div>
 </section>
+</main>
 
 <?php include 'footer.php'; ?>
