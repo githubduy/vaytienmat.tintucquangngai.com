@@ -28,10 +28,10 @@ $currentSeo = $seoConfig[$currentPage] ?? $seoConfig['default'];
             <div class="container">
                 <a href="index.php" class="logo"><i class="fas fa-hand-holding-usd"></i> <?php echo $contactConfig['brand']; ?></a>
                 <ul class="nav-links">
-                    <li><a href="index.php">Trang chủ</a></li>
-                    <li><a href="gioi-thieu.php">Giới thiệu</a></li>
-                    <li><a href="dich-vu.php">Gói vay</a></li>
-                    <li><a href="lien-he.php">Liên hệ</a></li>
+                    <li><a href="index.php" class="<?php echo ($currentPage == 'index') ? 'active' : ''; ?>">Trang chủ</a></li>
+                    <li><a href="gioi-thieu.php" class="<?php echo ($currentPage == 'gioi-thieu') ? 'active' : ''; ?>">Giới thiệu</a></li>
+                    <li><a href="dich-vu.php" class="<?php echo ($currentPage == 'dich-vu') ? 'active' : ''; ?>">Gói vay</a></li>
+                    <li><a href="lien-he.php" class="<?php echo ($currentPage == 'lien-he') ? 'active' : ''; ?>">Liên hệ</a></li>
                 </ul>
             </div>
         </nav>
