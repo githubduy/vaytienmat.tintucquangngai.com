@@ -3,10 +3,523 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hướng dẫn vay qua App SHB</title>
+    <title>Bí Kíp Online Banking SHB Finance - Quảng Ngãi</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Chosen Palette: Warm Orange (SHB Brand) & Trustworthy Blue -->
+    <!-- Application Structure Plan:
+         1. Hero Section: Friendly local greeting + Key Summary.
+         2. Core Pillars (Chart): Interactive visualization of the 3 key safety rules.
+         3. Security Simulator: Interactive tool to practice password rules.
+         4. Official Channels: A verification tool to distinguish real vs fake contacts.
+         5. Dos & Don'ts: A comparison toggle for clear behavioral guidance.
+         6. Risks: Expandable details on what to avoid.
+         7. Footer: Contact info and commitment.
+    -->
+
+    <style>
+        body { font-family: 'Roboto', sans-serif; background-color: #f8fafc; }
+        .shb-orange { color: #f37021; }
+        .bg-shb-orange { background-color: #f37021; }
+        .shb-blue { color: #004a98; }
+        .bg-shb-blue { background-color: #004a98; }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        /* Smooth transitions */
+        .transition-all-300 { transition: all 0.3s ease-in-out; }
+        
+        /* Custom scrollbar for cleaner look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #aaa; }
+    </style>
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 </head>
-<body>
-    <h1>Hướng dẫn vay qua App SHB</h1>
-    <p>Nội dung đang được cập nhật...</p>
+<body class="text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-shb-orange rounded-full flex items-center justify-center text-white font-bold">S</div>
+                    <span class="font-bold text-xl text-gray-800 tracking-tight">SHB Finance <span class="text-sm font-normal text-gray-500">| Quảng Ngãi</span></span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+					<a href="https://vaytienmat.tintucquangngai.com" class="text-gray-600 hover:text-shb-orange transition">Trang chủ</a>
+                    <a href="https://tintucquangngai.com" class="text-gray-600 hover:text-shb-orange transition">Tin nhanh Quảng Ngãi</a>
+                    <a href="#summary" class="text-gray-600 hover:text-shb-orange transition">Tóm Tắt</a>
+                    <a href="#security" class="text-gray-600 hover:text-shb-orange transition">Bảo Mật</a>
+                    <a href="#channels" class="text-gray-600 hover:text-shb-orange transition">Liên Hệ</a>
+                    <a href="#risks" class="text-gray-600 hover:text-shb-orange transition">Rủi Ro</a>
+                </div>
+                <button onclick="scrollToSection('contact')" class="bg-shb-orange text-white px-4 py-2 rounded-lg shadow hover:bg-orange-600 transition">
+                    Hỗ Trợ Ngay
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="summary" class="bg-gradient-to-br from-blue-50 to-orange-50 py-12 md:py-20">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold mb-4">Dành riêng cho 500 anh em thiện lành</span>
+            <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                Bí Kíp "Lướt" Tiền Về Túi <br><span class="shb-orange">Cùng SHB Finance</span>
+            </h1>
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                Thay vì ra quầy xếp hàng chờ đợi nắng nôi, giờ đây ngồi nhà rung đùi cũng vay được tiền, quản lý tài khoản qua Online Banking. Đọc ngay để dùng mượt mà và <strong>KHÔNG MẤT TIỀN OAN</strong>.
+            </p>
+            
+            <!-- Quick Summary Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <h3 class="font-bold text-xl text-gray-800 mb-2">📱 App Mobile</h3>
+                    <p class="text-gray-600">Tìm <strong>"SHBFinance"</strong> trên CH Play / App Store. Tiện lợi khi đi cafe bờ kè Trà Khúc hay đi Lý Sơn.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <h3 class="font-bold text-xl text-gray-800 mb-2">🌐 Website</h3>
+                    <p class="text-gray-600">Truy cập <strong>www.shbfinance.com.vn</strong>. Nhớ nhìn đúng tên miền, thấy ổ khóa là chuẩn.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Visualization Section: Core Security Pillars -->
+    <!-- Visualization & Content Choices: 
+         - Goal: Emphasize the "Khẩu quyết" (Motto).
+         - Method: Interactive Doughnut Chart.
+         - Interaction: Clicking a slice updates the explanation text below.
+         - Justification: Visualizing the 3 components makes them memorable. 
+    -->
+    <section class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Khẩu Quyết An Toàn</h2>
+                <p class="text-gray-600">Bấm vào biểu đồ bên dưới để xem chi tiết từng quy tắc "sống còn".</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div class="w-full">
+                    <div class="chart-container">
+                        <canvas id="securityChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 p-8 rounded-2xl border-l-4 border-shb-blue transition-all-300" id="mottoDetailBox">
+                    <h3 class="text-2xl font-bold text-shb-blue mb-3" id="mottoTitle">Chọn một mục tiêu</h3>
+                    <p class="text-gray-700 text-lg leading-relaxed" id="mottoDesc">
+                        Bấm vào các phần của biểu đồ để xem chi tiết quy tắc bảo mật: Mật khẩu, OTP, hoặc Ứng dụng.
+                    </p>
+                    <div class="mt-6 pt-6 border-t border-blue-200">
+                        <span class="text-sm text-gray-500 italic">💡 Lời khuyên từ chuyên gia SHB FC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Security Simulator -->
+    <!-- Visualization & Content Choices:
+         - Goal: Teach password complexity rules interactively.
+         - Method: Live input validation field.
+         - Interaction: Typing updates checklists for Length, Upper, Number, Lower.
+         - Justification: "Show, don't tell" is better for learning password rules.
+    -->
+    <section id="security" class="py-16 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2 text-center">Phòng Tập "Độ Mạnh" Mật Khẩu</h2>
+            <p class="text-gray-600 text-center mb-8">Thử nhập mật khẩu dự định của bạn để xem có đủ chuẩn không nhé (Chỉ mô phỏng, không lưu lại đâu!).</p>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-bold mb-2">Nhập thử mật khẩu:</label>
+                    <input type="text" id="passwordInput" placeholder="Ví dụ: QuangNgai@76" class="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-shb-orange transition text-lg" autocomplete="off">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                    <div id="ruleLength" class="flex items-center p-3 rounded bg-gray-100 text-gray-500">
+                        <span class="mr-2 text-xl">⚪</span> Ít nhất 8 ký tự
+                    </div>
+                    <div id="ruleNumber" class="flex items-center p-3 rounded bg-gray-100 text-gray-500">
+                        <span class="mr-2 text-xl">⚪</span> Có chứa số
+                    </div>
+                    <div id="ruleUpper" class="flex items-center p-3 rounded bg-gray-100 text-gray-500">
+                        <span class="mr-2 text-xl">⚪</span> Có chữ viết hoa
+                    </div>
+                    <div id="ruleLower" class="flex items-center p-3 rounded bg-gray-100 text-gray-500">
+                        <span class="mr-2 text-xl">⚪</span> Có chữ viết thường
+                    </div>
+                </div>
+
+                <div id="passwordVerdict" class="text-center font-bold text-xl p-4 rounded-lg bg-gray-100 text-gray-400">
+                    Chưa nhập gì cả...
+                </div>
+                
+                <div class="mt-6 text-sm text-gray-500 bg-yellow-50 p-4 rounded border border-yellow-200">
+                    <strong>Lưu ý:</strong> Mật khẩu cấp lần đầu chỉ sống được <strong>30 ngày</strong>. Nhớ đổi ngay kẻo nó "ngỏm"!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real vs Fake Channels -->
+    <!-- Visualization & Content Choices:
+         - Goal: Help users distinguish official contact points from scams.
+         - Method: Interactive list with verification logic.
+         - Interaction: Click item -> Show Success/Warning message.
+         - Justification: Reinforces memory of official channels (1900 2198, etc.).
+    -->
+    <section id="channels" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">Kiểm Tra Kênh Liên Lạc Chính Chủ</h2>
+            <p class="text-center text-gray-600 mb-8">Bấm vào các kênh bên dưới để xem đâu là hàng thật (✅), đâu là hàng giả (❌).</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="channelGrid">
+                <!-- Channels populated by JS -->
+            </div>
+            
+            <div id="channelResult" class="mt-6 p-4 rounded-xl hidden text-center font-bold text-lg transition-all-300"></div>
+        </div>
+    </section>
+
+    <!-- Dos and Don'ts Comparison -->
+    <!-- Visualization & Content Choices:
+         - Goal: Compare good vs bad behaviors.
+         - Method: Toggle switch between two lists.
+         - Interaction: User switches views.
+         - Justification: Cleaner than a giant table on mobile. Focuses attention on one mode at a time.
+    -->
+    <section class="py-16 bg-blue-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">Nên & Không Nên</h2>
+            
+            <div class="flex justify-center mb-8">
+                <div class="bg-white p-1 rounded-full shadow-sm inline-flex">
+                    <button onclick="toggleDos('do')" id="btnDo" class="px-6 py-2 rounded-full font-bold bg-green-100 text-green-700 transition-colors">👍 Nên Làm</button>
+                    <button onclick="toggleDos('dont')" id="btnDont" class="px-6 py-2 rounded-full font-bold text-gray-500 hover:text-red-600 transition-colors">👎 Cấm Kỵ</button>
+                </div>
+            </div>
+
+            <div id="doContent" class="bg-white p-8 rounded-2xl shadow-sm border-l-8 border-green-500 animate-fade-in">
+                <h3 class="text-2xl font-bold text-green-700 mb-4">👍 Hành Động Đẹp</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start"><span class="text-green-500 mr-2 text-xl">✔</span> <span><strong>Đổi mật khẩu</strong> ngay khi nhận được từ SHB FC.</span></li>
+                    <li class="flex items-start"><span class="text-green-500 mr-2 text-xl">✔</span> <span>Đăng xuất App SHBFinance khi không dùng nữa.</span></li>
+                    <li class="flex items-start"><span class="text-green-500 mr-2 text-xl">✔</span> <span>Tải App từ CH Play hoặc App Store chính thống.</span></li>
+                    <li class="flex items-start"><span class="text-green-500 mr-2 text-xl">✔</span> <span>Dùng 3G/4G/Wifi nhà mình để giao dịch.</span></li>
+                    <li class="flex items-start"><span class="text-green-500 mr-2 text-xl">✔</span> <span>Gọi <strong>1900 2198</strong> báo ngay nếu mất máy.</span></li>
+                    <li class="flex items-start"><span class="text-green-500 mr-2 text-xl">✔</span> <span>Cung cấp số điện thoại/CCCD chính chủ.</span></li>
+                </ul>
+            </div>
+
+            <div id="dontContent" class="hidden bg-white p-8 rounded-2xl shadow-sm border-l-8 border-red-500 animate-fade-in">
+                <h3 class="text-2xl font-bold text-red-700 mb-4">👎 Hành Động "Xu" (Cấm Kỵ)</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start"><span class="text-red-500 mr-2 text-xl">✖</span> <span>Đặt mật khẩu dễ đoán như ngày sinh, số điện thoại, 123456.</span></li>
+                    <li class="flex items-start"><span class="text-red-500 mr-2 text-xl">✖</span> <span>Lưu mật khẩu vào ghi chú điện thoại hoặc dán lên màn hình.</span></li>
+                    <li class="flex items-start"><span class="text-red-500 mr-2 text-xl">✖</span> <span>Tải App qua đường link lạ gửi qua Zalo/Facebook.</span></li>
+                    <li class="flex items-start"><span class="text-red-500 mr-2 text-xl">✖</span> <span>Dùng <strong>Wifi chùa</strong> ở quán cafe, bến xe để chuyển tiền (dễ bị hack).</span></li>
+                    <li class="flex items-start"><span class="text-red-500 mr-2 text-xl">✖</span> <span>Im lặng khi mất máy và hy vọng kẻ trộm không biết pass.</span></li>
+                    <li class="flex items-start"><span class="text-red-500 mr-2 text-xl">✖</span> <span>Mượn thông tin của bồ nhí/hàng xóm để đăng ký vay.</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risks to Avoid (Accordion) -->
+    <section id="risks" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">⚠️ Rủi Ro Cần Tránh</h2>
+            <div class="space-y-4">
+                
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button onclick="toggleRisk(1)" class="w-full flex justify-between items-center p-5 bg-gray-50 hover:bg-gray-100 transition text-left">
+                        <span class="font-bold text-lg text-gray-800">1. Mất Điện Thoại</span>
+                        <span id="riskIcon1" class="text-2xl text-shb-orange transition-transform duration-300">+</span>
+                    </button>
+                    <div id="riskContent1" class="hidden p-5 bg-white text-gray-600 border-t border-gray-100">
+                        Báo tổng đài <strong>1900 2198</strong> khóa ngay tài khoản! Đừng tiếc cái máy mà quên cái tài khoản bên trong. Kẻ gian có thể dùng nó để thực hiện giao dịch trái phép.
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button onclick="toggleRisk(2)" class="w-full flex justify-between items-center p-5 bg-gray-50 hover:bg-gray-100 transition text-left">
+                        <span class="font-bold text-lg text-gray-800">2. Cho Mượn Tài Khoản</span>
+                        <span id="riskIcon2" class="text-2xl text-shb-orange transition-transform duration-300">+</span>
+                    </button>
+                    <div id="riskContent2" class="hidden p-5 bg-white text-gray-600 border-t border-gray-100">
+                        Không cho ai mượn tài khoản để nhận tiền giùm. Coi chừng dính líu đến rửa tiền hoặc lừa đảo, công an mời lên phường uống trà đấy!
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button onclick="toggleRisk(3)" class="w-full flex justify-between items-center p-5 bg-gray-50 hover:bg-gray-100 transition text-left">
+                        <span class="font-bold text-lg text-gray-800">3. Bấm Vào Link Lạ</span>
+                        <span id="riskIcon3" class="text-2xl text-shb-orange transition-transform duration-300">+</span>
+                    </button>
+                    <div id="riskContent3" class="hidden p-5 bg-white text-gray-600 border-t border-gray-100">
+                        Thấy link rút gọn kiểu <em>bit.ly</em> hay <em>tinyurl</em> mà không rõ nguồn gốc thì đừng ngứa tay bấm vào. Đó có thể là trang web giả mạo để đánh cắp mật khẩu của bạn.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Contact -->
+    <footer id="contact" class="bg-gray-900 text-white py-12">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold mb-6">Cam Kết Đôi Bên</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 text-left">
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h4 class="font-bold text-shb-orange mb-2">Khách Hàng</h4>
+                    <p class="text-gray-300 text-sm">Cung cấp thông tin thật thà, không "chém gió" hồ sơ. Chịu trách nhiệm với mọi cú click chuột của mình.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h4 class="font-bold text-shb-orange mb-2">SHB Finance</h4>
+                    <p class="text-gray-300 text-sm">Đảm bảo hệ thống chạy mượt (trừ lúc bảo trì định kỳ). Giữ bí mật thông tin của bà con an toàn tuyệt đối.</p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8">
+                <h3 class="text-xl font-bold mb-4">Cần Hỗ Trợ Tại Quảng Ngãi?</h3>
+                <p class="text-gray-400 mb-6">Liên hệ Cộng tác viên SHB FC đẹp trai/xinh gái nhất vịnh Bắc Bộ!</p>
+                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                    <a href="tel:19002198" class="bg-shb-orange hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold transition flex items-center justify-center">
+                        📞 Hotline: 1900 2198
+                    </a>
+                    <a href="mailto:cskh@shbfinance.com.vn" class="bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-full font-bold transition flex items-center justify-center">
+                        📧 Email: cskh@shbfinance.com.vn
+                    </a>
+                </div>
+                <p class="mt-8 text-gray-500 text-xs">Nội dung dựa trên chính sách Online Banking của SHB Finance 2025.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // --- 1. Chart.js Implementation for "Safety Pie" ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('securityChart').getContext('2d');
+            
+            // Data describing the 3 pillars
+            const mottoData = {
+                labels: ['Mật Khẩu (Giữ Kín)', 'OTP (Không Chia Sẻ)', 'App (Chính Chủ)'],
+                descriptions: [
+                    '<strong>Mật khẩu giữ kín:</strong> Không đặt dễ đoán (123456). Không lưu trên ghi chú điện thoại. Không dán lên màn hình!',
+                    '<strong>OTP là chốt chặn cuối cùng:</strong> Tuyệt đối không đưa mã này cho ai, kể cả người xưng là nhân viên SHB FC, công an hay ông trời con.',
+                    '<strong>App Chính Chủ:</strong> Chỉ tải SHBFinance trên CH Play hoặc App Store. Không cài qua link lạ trên Zalo/Facebook.'
+                ],
+                colors: ['#f37021', '#004a98', '#10b981'] // Orange, Blue, Green
+            };
+
+            const chart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: mottoData.labels,
+                    datasets: [{
+                        data: [33, 33, 33],
+                        backgroundColor: mottoData.colors,
+                        borderWidth: 0,
+                        hoverOffset: 15
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: { size: 14 },
+                                padding: 20
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return 'Bấm để xem chi tiết';
+                                }
+                            }
+                        }
+                    },
+                    onClick: (e, activeElements) => {
+                        if (activeElements.length > 0) {
+                            const index = activeElements[0].index;
+                            updateMottoDetail(index);
+                        }
+                    }
+                }
+            });
+
+            // Initial state
+            updateMottoDetail(1); // Default to OTP
+
+            function updateMottoDetail(index) {
+                const titleEl = document.getElementById('mottoTitle');
+                const descEl = document.getElementById('mottoDesc');
+                const boxEl = document.getElementById('mottoDetailBox');
+
+                // Update text
+                titleEl.textContent = mottoData.labels[index];
+                descEl.innerHTML = mottoData.descriptions[index];
+                
+                // Update styling to match selected slice color
+                titleEl.style.color = mottoData.colors[index];
+                boxEl.style.borderColor = mottoData.colors[index];
+                boxEl.classList.remove('bg-blue-50');
+                boxEl.style.backgroundColor = hexToRgba(mottoData.colors[index], 0.1);
+            }
+
+            // Helper for RGBA color
+            function hexToRgba(hex, alpha) {
+                const r = parseInt(hex.slice(1, 3), 16);
+                const g = parseInt(hex.slice(3, 5), 16);
+                const b = parseInt(hex.slice(5, 7), 16);
+                return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+            }
+        });
+
+        // --- 2. Password Simulator Logic ---
+        const passwordInput = document.getElementById('passwordInput');
+        const rules = {
+            length: { el: document.getElementById('ruleLength'), regex: /.{8,}/ },
+            number: { el: document.getElementById('ruleNumber'), regex: /\d/ },
+            upper: { el: document.getElementById('ruleUpper'), regex: /[A-Z]/ },
+            lower: { el: document.getElementById('ruleLower'), regex: /[a-z]/ }
+        };
+        const verdictEl = document.getElementById('passwordVerdict');
+
+        passwordInput.addEventListener('input', function(e) {
+            const val = e.target.value;
+            let score = 0;
+
+            if (val.length === 0) {
+                verdictEl.textContent = "Chưa nhập gì cả...";
+                verdictEl.className = "text-center font-bold text-xl p-4 rounded-lg bg-gray-100 text-gray-400";
+                resetRules();
+                return;
+            }
+
+            // Check rules
+            for (const key in rules) {
+                if (rules[key].regex.test(val)) {
+                    rules[key].el.className = "flex items-center p-3 rounded bg-green-100 text-green-700 transition-colors";
+                    rules[key].el.querySelector('span').textContent = "✅";
+                    score++;
+                } else {
+                    rules[key].el.className = "flex items-center p-3 rounded bg-red-50 text-red-400 transition-colors";
+                    rules[key].el.querySelector('span').textContent = "⚪";
+                }
+            }
+
+            // Verdict
+            if (score === 4) {
+                verdictEl.textContent = "Tuyệt Vời! Mật khẩu này 'Mạnh' chuẩn bài!";
+                verdictEl.className = "text-center font-bold text-xl p-4 rounded-lg bg-green-500 text-white animate-pulse";
+            } else if (score >= 2) {
+                verdictEl.textContent = "Khá ổn, nhưng chưa đủ đô...";
+                verdictEl.className = "text-center font-bold text-xl p-4 rounded-lg bg-yellow-400 text-white";
+            } else {
+                verdictEl.textContent = "Yếu quá! Dễ bị hack lắm!";
+                verdictEl.className = "text-center font-bold text-xl p-4 rounded-lg bg-red-500 text-white";
+            }
+        });
+
+        function resetRules() {
+            for (const key in rules) {
+                rules[key].el.className = "flex items-center p-3 rounded bg-gray-100 text-gray-500";
+                rules[key].el.querySelector('span').textContent = "⚪";
+            }
+        }
+
+        // --- 3. Channel Verification Logic ---
+        const channels = [
+            { name: "Website: shbfinance.com.vn", isReal: true, type: "web" },
+            { name: "SĐT: 1900 2198", isReal: true, type: "phone" },
+            { name: "Website: shb-vaynhanh.bit.ly", isReal: false, type: "web" },
+            { name: "Zalo: Tài chính tiêu dùng SHB (Có tích vàng)", isReal: true, type: "app" },
+            { name: "Email: hotro@gmail.com", isReal: false, type: "mail" },
+            { name: "App: SHBFinance (CH Play/Store)", isReal: true, type: "app" }
+        ];
+
+        const channelGrid = document.getElementById('channelGrid');
+        const resultDiv = document.getElementById('channelResult');
+
+        channels.forEach(channel => {
+            const btn = document.createElement('button');
+            btn.className = "p-4 rounded-lg border border-gray-200 bg-gray-50 hover:bg-white hover:shadow-md transition text-left flex items-center justify-between group";
+            btn.innerHTML = `<span class="font-medium text-gray-700 group-hover:text-shb-blue">${channel.name}</span> <span class="text-gray-400 text-sm">Bấm để kiểm tra</span>`;
+            
+            btn.onclick = () => {
+                if (channel.isReal) {
+                    resultDiv.className = "mt-6 p-4 rounded-xl text-center font-bold text-lg bg-green-100 text-green-700 border border-green-200 block animate-bounce";
+                    resultDiv.innerHTML = `✅ CHÍNH XÁC! Đây là kênh chính chủ của SHB FC.`;
+                } else {
+                    resultDiv.className = "mt-6 p-4 rounded-xl text-center font-bold text-lg bg-red-100 text-red-700 border border-red-200 block animate-shake";
+                    resultDiv.innerHTML = `❌ CẢNH BÁO! Đây là kênh GIẢ MẠO/LỪA ĐẢO. Đừng tin nhé!`;
+                }
+            };
+            channelGrid.appendChild(btn);
+        });
+
+        // --- 4. Toggle Dos & Don'ts ---
+        function toggleDos(type) {
+            const doBtn = document.getElementById('btnDo');
+            const dontBtn = document.getElementById('btnDont');
+            const doContent = document.getElementById('doContent');
+            const dontContent = document.getElementById('dontContent');
+
+            if (type === 'do') {
+                doBtn.className = "px-6 py-2 rounded-full font-bold bg-green-100 text-green-700 transition-colors shadow-sm";
+                dontBtn.className = "px-6 py-2 rounded-full font-bold text-gray-500 hover:text-red-600 transition-colors";
+                doContent.classList.remove('hidden');
+                dontContent.classList.add('hidden');
+            } else {
+                doBtn.className = "px-6 py-2 rounded-full font-bold text-gray-500 hover:text-green-600 transition-colors";
+                dontBtn.className = "px-6 py-2 rounded-full font-bold bg-red-100 text-red-700 transition-colors shadow-sm";
+                doContent.classList.add('hidden');
+                dontContent.classList.remove('hidden');
+            }
+        }
+
+        // --- 5. Toggle Risk Accordion ---
+        function toggleRisk(id) {
+            const content = document.getElementById(`riskContent${id}`);
+            const icon = document.getElementById(`riskIcon${id}`);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(45deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Smooth Scroll
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>

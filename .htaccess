@@ -1,6 +1,18 @@
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^\.]+)$ $1.php [NC,L]
-RewriteRule ^([^\.]+)$ $1.html [NC,L]
-RewriteRule ^([^\.]+)$ $1.htm [NC,L]
+
+# 1. Nếu file có tồn tại hoặc là thư mục thì bỏ qua, không xử lý rewrite
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# 2. Kiểm tra nếu file .html tồn tại thì rewrite (Ưu tiên html cho yêu cầu của bạn)
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
+
+# 3. Kiểm tra nếu file .php tồn tại
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
+
+# 4. Kiểm tra nếu file .htm tồn tại
+RewriteCond %{REQUEST_FILENAME}.htm -f
+RewriteRule ^(.*)$ $1.htm [NC,L]
