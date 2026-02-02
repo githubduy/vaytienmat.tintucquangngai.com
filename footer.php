@@ -19,7 +19,7 @@ if (!isset($contactConfig) && file_exists('config/contact.php')) {
                 <h3>Chính Sách</h3>
                 <p><i class="fas fa-shield-alt"></i> Bảo mật thông tin khách hàng</p>
                 <p><i class="fas fa-check-circle"></i> Lãi suất minh bạch</p>
-                <p><a href="dieu-khoan.php" style="color: inherit; text-decoration: none;"><i class="fas fa-file-contract"></i> Điều khoản sử dụng</a></p>
+                <p><a href="dieu-khoan" style="color: inherit; text-decoration: none;"><i class="fas fa-file-contract"></i> Điều khoản sử dụng</a></p>
             </div>
         </div>
         <div class="copyright">

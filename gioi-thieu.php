@@ -35,7 +35,7 @@
 
     <div style="text-align: center; margin-top: 30px;">
         <h3>Bạn cần tư vấn ngay?</h3>
-        <a href="lien-he.php" class="btn-primary">Liên Hệ Với Chúng Tôi</a>
+        <a href="lien-he" class="btn-primary">Liên Hệ Với Chúng Tôi</a>
     </div>
 </section>
 <?php include 'footer.php'; ?>

@@ -26,19 +26,19 @@ $currentSeo = $seoConfig[$currentPage] ?? $seoConfig['default'];
         </div>
         <nav class="navbar">
             <div class="container">
-                <a href="index.php" class="logo"><i class="fas fa-hand-holding-usd"></i> <?php echo $contactConfig['brand']; ?></a>
+                <a href="index" class="logo"><i class="fas fa-hand-holding-usd"></i> <?php echo $contactConfig['brand']; ?></a>
                 <ul class="nav-links">
-                    <li><a href="index.php" class="<?php echo ($currentPage == 'index') ? 'active' : ''; ?>">Trang chủ</a></li>
-                    <li><a href="gioi-thieu.php" class="<?php echo ($currentPage == 'gioi-thieu') ? 'active' : ''; ?>">Giới thiệu</a></li>
-                    <li><a href="dich-vu.php" class="<?php echo ($currentPage == 'dich-vu') ? 'active' : ''; ?>">Gói vay</a></li>
+                    <li><a href="index" class="<?php echo ($currentPage == 'index') ? 'active' : ''; ?>">Trang chủ</a></li>
+                    <li><a href="gioi-thieu" class="<?php echo ($currentPage == 'gioi-thieu') ? 'active' : ''; ?>">Giới thiệu</a></li>
+                    <li><a href="dich-vu" class="<?php echo ($currentPage == 'dich-vu') ? 'active' : ''; ?>">Gói vay</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropbtn">Hỗ trợ</a>
                         <div class="dropdown-content">
-                            <a href="pages/dich-vu/gioi-thieu-app-banking.html">Hướng dẫn vay qua App SHB</a>
+                            <a href="pages/dich-vu/gioi-thieu-app-banking">Hướng dẫn vay qua App SHB</a>
                         </div>
                     </li>
-                    <li><a href="dieu-khoan.php" class="<?php echo ($currentPage == 'dieu-khoan') ? 'active' : ''; ?>">Điều khoản</a></li>
-                    <li><a href="lien-he.php" class="<?php echo ($currentPage == 'lien-he') ? 'active' : ''; ?>">Liên hệ</a></li>
+                    <li><a href="dieu-khoan" class="<?php echo ($currentPage == 'dieu-khoan') ? 'active' : ''; ?>">Điều khoản</a></li>
+                    <li><a href="lien-he" class="<?php echo ($currentPage == 'lien-he') ? 'active' : ''; ?>">Liên hệ</a></li>
                 </ul>
             </div>
         </nav>
