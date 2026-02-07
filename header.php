@@ -34,7 +34,9 @@ $currentSeo = $seoConfig[$currentPage] ?? $seoConfig['default'];
                     <li class="dropdown">
                         <a href="#" class="dropbtn">Hỗ trợ</a>
                         <div class="dropdown-content">
-                            <a href="pages/dich-vu/gioi-thieu-app-banking">Hướng dẫn vay qua App SHB</a>
+                            <a href="pages/dich-vu/gioi-thieu-app-banking.html">Hướng dẫn vay qua App SHB</a>
+                            <a href="pages/dich-vu/tat-toan-khoan-vay.html">Hướng dẫn tất toán</a>
+                            <a href="pages/dich-vu/no-qua-han.html">Tìm hiểu nợ quá hạn</a>
                         </div>
                     </li>
                     <li><a href="dieu-khoan" class="<?php echo ($currentPage == 'dieu-khoan') ? 'active' : ''; ?>">Điều khoản</a></li>
