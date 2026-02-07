@@ -32,7 +32,7 @@ $currentSeo = $seoConfig[$currentPage] ?? $seoConfig['default'];
                     <li><a href="gioi-thieu" class="<?php echo ($currentPage == 'gioi-thieu') ? 'active' : ''; ?>">Giới thiệu</a></li>
                     <li><a href="dich-vu" class="<?php echo ($currentPage == 'dich-vu') ? 'active' : ''; ?>">Gói vay</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropbtn">Hỗ trợ</a>
+                        <a href="javascript:void(0)" class="dropbtn" onclick="toggleDropdown(this)">Hỗ trợ <i class="fas fa-caret-down"></i></a>
                         <div class="dropdown-content">
                             <a href="pages/dich-vu/gioi-thieu-app-banking.html">Hướng dẫn vay qua App SHB</a>
                             <a href="pages/dich-vu/tat-toan-khoan-vay.html">Hướng dẫn tất toán</a>
@@ -44,4 +44,25 @@ $currentSeo = $seoConfig[$currentPage] ?? $seoConfig['default'];
                 </ul>
             </div>
         </nav>
-    </header>
+</header>
+
+<script>
+function toggleDropdown(element) {
+    // Ngăn chặn hành vi mặc định nếu cần và toggle class show
+    var dropdownContent = element.nextElementSibling;
+    dropdownContent.classList.toggle("show");
+}
+
+// Đóng dropdown khi click ra ngoài (tùy chọn để trải nghiệm tốt hơn)
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn') && !event.target.closest('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+</script>
