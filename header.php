@@ -27,6 +27,11 @@ $currentSeo = $seoConfig[$currentPage] ?? $seoConfig['default'];
         <nav class="navbar">
             <div class="container">
                 <a href="index" class="logo"><i class="fas fa-hand-holding-usd"></i> <?php echo $contactConfig['brand']; ?></a>
+                
+                <div class="menu-toggle" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+
                 <ul class="nav-links">
                     <li><a href="index" class="<?php echo ($currentPage == 'index') ? 'active' : ''; ?>">Trang chủ</a></li>
                     <li><a href="gioi-thieu" class="<?php echo ($currentPage == 'gioi-thieu') ? 'active' : ''; ?>">Giới thiệu</a></li>
@@ -47,6 +52,11 @@ $currentSeo = $seoConfig[$currentPage] ?? $seoConfig['default'];
 </header>
 
 <script>
+function toggleMobileMenu() {
+    var navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+
 function toggleDropdown(element) {
     // Ngăn chặn hành vi mặc định nếu cần và toggle class show
     var dropdownContent = element.nextElementSibling;
