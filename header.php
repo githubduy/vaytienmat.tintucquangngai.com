@@ -33,19 +33,19 @@ $currentSeo = $seoConfig[$currentPage] ?? $seoConfig['default'];
                 </div>
 
                 <ul class="nav-links">
-                    <li><a href="index" class="<?php echo ($currentPage == 'index') ? 'active' : ''; ?>">Trang chủ</a></li>
-                    <li><a href="gioi-thieu" class="<?php echo ($currentPage == 'gioi-thieu') ? 'active' : ''; ?>">Giới thiệu</a></li>
-                    <li><a href="dich-vu" class="<?php echo ($currentPage == 'dich-vu') ? 'active' : ''; ?>">Gói vay</a></li>
+                    <li><a href="index" class="<?php echo ($currentPage == 'index') ? 'active' : ''; ?>"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li><a href="gioi-thieu" class="<?php echo ($currentPage == 'gioi-thieu') ? 'active' : ''; ?>"><i class="fas fa-info-circle"></i> Giới thiệu</a></li>
+                    <li><a href="dich-vu" class="<?php echo ($currentPage == 'dich-vu') ? 'active' : ''; ?>"><i class="fas fa-hand-holding-usd"></i> Gói vay</a></li>
                     <li class="dropdown">
-                        <a href="javascript:void(0)" class="dropbtn" onclick="toggleDropdown(this)">Hỗ trợ <i class="fas fa-caret-down"></i></a>
+                        <a href="javascript:void(0)" class="dropbtn" onclick="toggleDropdown(this)"><i class="fas fa-headset"></i> Hỗ trợ <i class="fas fa-caret-down"></i></a>
                         <div class="dropdown-content">
-                            <a href="pages/dich-vu/gioi-thieu-app-banking.html">Hướng dẫn vay qua App SHB</a>
-                            <a href="pages/dich-vu/tat-toan-khoan-vay.html">Hướng dẫn tất toán</a>
-                            <a href="pages/dich-vu/no-qua-han.html">Tìm hiểu nợ quá hạn</a>
+                            <a href="pages/dich-vu/gioi-thieu-app-banking.html"><i class="fas fa-mobile-alt"></i> Hướng dẫn vay qua App SHB</a>
+                            <a href="pages/dich-vu/tat-toan-khoan-vay.html"><i class="fas fa-check-double"></i> Hướng dẫn tất toán</a>
+                            <a href="pages/dich-vu/no-qua-han.html"><i class="fas fa-exclamation-triangle"></i> Tìm hiểu nợ quá hạn</a>
                         </div>
                     </li>
-                    <li><a href="dieu-khoan" class="<?php echo ($currentPage == 'dieu-khoan') ? 'active' : ''; ?>">Điều khoản</a></li>
-                    <li><a href="lien-he" class="<?php echo ($currentPage == 'lien-he') ? 'active' : ''; ?>">Liên hệ</a></li>
+                    <li><a href="dieu-khoan" class="<?php echo ($currentPage == 'dieu-khoan') ? 'active' : ''; ?>"><i class="fas fa-file-contract"></i> Điều khoản</a></li>
+                    <li><a href="lien-he" class="<?php echo ($currentPage == 'lien-he') ? 'active' : ''; ?>"><i class="fas fa-envelope"></i> Liên hệ</a></li>
                 </ul>
             </div>
         </nav>

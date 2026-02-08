@@ -79,6 +79,9 @@ body {
     background-color: var(--secondary-color);
     font-weight: bold;
 }
+.nav-links a i {
+    margin-right: 5px;
+}
 
 /* Hero */
 .hero {
