@@ -146,19 +146,20 @@
     <div class="container">
         <h2>Liên Hệ Tư Vấn Miễn Phí</h2>
         <p>Để lại thông tin, chúng tôi sẽ gọi lại ngay cho bạn.</p>
-        <form class="contact-form">
+        <form class="contact-form" id="formIndex" onsubmit="sendTelegram(event, 'formIndex')">
             <div class="form-group">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="Họ và tên" required>
+                <input type="text" name="fullname" placeholder="Họ và tên" required>
             </div>
             <div class="form-group">
                 <i class="fas fa-phone"></i>
-                <input type="tel" placeholder="Số điện thoại" required>
+                <input type="tel" name="phone" placeholder="Số điện thoại" required>
             </div>
             <div class="form-group">
                 <i class="fas fa-map-marker-alt"></i>
-                <input type="text" placeholder="Khu vực sinh sống">
+                <input type="text" name="address" placeholder="Khu vực sinh sống">
             </div>
+            <input type="hidden" name="source" value="Trang chủ">
             <button type="submit" class="btn-primary">Gửi Yêu Cầu</button>
         </form>
     </div>

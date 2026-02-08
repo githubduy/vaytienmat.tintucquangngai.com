@@ -31,12 +31,13 @@
             <div style="flex: 1; min-width: 300px;">
                 <div class="contact-form" style="background: var(--primary-color); color: #fff; margin: 0;">
                     <h3 style="text-align: center; margin-bottom: 20px;">Đăng Ký Vay Online</h3>
-                    <form>
-                        <div class="form-group"><i class="fas fa-user"></i><input type="text" placeholder="Họ và tên" required></div>
-                        <div class="form-group"><i class="fas fa-phone"></i><input type="tel" placeholder="Số điện thoại" required></div>
-                        <div class="form-group"><i class="fas fa-id-card"></i><input type="text" placeholder="Số CMND/CCCD"></div>
-                        <div class="form-group"><i class="fas fa-money-bill-wave"></i><input type="number" placeholder="Số tiền muốn vay (triệu đồng)"></div>
-                        <div class="form-group"><i class="fas fa-map-marker-alt"></i><input type="text" placeholder="Khu vực sinh sống (Huyện/Xã)"></div>
+                    <form id="formContact" onsubmit="sendTelegram(event, 'formContact')">
+                        <div class="form-group"><i class="fas fa-user"></i><input type="text" name="fullname" placeholder="Họ và tên" required></div>
+                        <div class="form-group"><i class="fas fa-phone"></i><input type="tel" name="phone" placeholder="Số điện thoại" required></div>
+                        <div class="form-group"><i class="fas fa-id-card"></i><input type="text" name="id_card" placeholder="Số CMND/CCCD"></div>
+                        <div class="form-group"><i class="fas fa-money-bill-wave"></i><input type="number" name="amount" placeholder="Số tiền muốn vay (triệu đồng)"></div>
+                        <div class="form-group"><i class="fas fa-map-marker-alt"></i><input type="text" name="address" placeholder="Khu vực sinh sống (Huyện/Xã)"></div>
+                        <input type="hidden" name="source" value="Trang liên hệ">
                         <button type="submit" class="btn-primary" style="width: 100%; background: var(--secondary-color);">Gửi Hồ Sơ Ngay</button>
                     </form>
                 </div>

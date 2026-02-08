@@ -37,5 +37,40 @@ if (!isset($contactConfig) && file_exists('config/contact.php')) {
             <span class="phone-text"><?php echo $contactConfig['phone_display']; ?></span>
         </a>
     </div>
+
+    <script>
+    function sendTelegram(event, formId) {
+        event.preventDefault();
+        const form = document.getElementById(formId);
+        const formData = new FormData(form);
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.innerText;
+        
+        btn.innerText = 'Đang gửi...';
+        btn.disabled = true;
+
+        fetch('api/send-contact.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                alert('Gửi thông tin thành công! Chúng tôi sẽ liên hệ lại sớm.');
+                form.reset();
+            } else {
+                alert('Có lỗi xảy ra: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Có lỗi kết nối, vui lòng thử lại sau.');
+        })
+        .finally(() => {
+            btn.innerText = originalText;
+            btn.disabled = false;
+        });
+    }
+    </script>
 </body>
 </html>
