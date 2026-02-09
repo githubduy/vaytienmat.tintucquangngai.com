@@ -67,7 +67,7 @@ $context  = stream_context_create($options);
 $result = @file_get_contents($url, false, $context);
 
 if ($result === FALSE) {
-    echo json_encode(['status' => 'error', 'message' => 'Không thể gửi tin nhắn. Vui lòng kiểm tra cấu hình Bot.']);
+    echo json_encode(['status' => 'error', 'message' => 'Không thể gửi tin nhắn. Vui lòng kiểm tra cấu hình Bot telegram vaytinchap_bot.']);
 } else {
     echo json_encode(['status' => 'success', 'message' => 'Đã gửi thông tin thành công']);
 }
