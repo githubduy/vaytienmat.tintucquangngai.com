@@ -52,6 +52,22 @@
         </table>
     </div>
     <p class="note-text">* Lưu ý: Thời gian vay tối thiểu là 6 tháng, tối đa là 48 tháng. Mức vay tối thiểu là 10 triệu, tối đa là 400 triệu cho một lần vay. Lãi suất % hàng năm tối thiểu là 18%/năm và tối đa là 36%/năm</p>
+
+    <div class="loan-example" style="background: #eef7ff; padding: 20px; border-radius: 8px; margin-top: 20px; border: 1px solid #b8daff;">
+        <h3 style="color: var(--primary-color); margin-bottom: 15px;"><i class="fas fa-calculator"></i> Ví Dụ Minh Họa Khoản Vay</h3>
+        <ul style="list-style: none;">
+            <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: green; margin-right: 10px;"></i> <strong>Gói vay:</strong> 10 triệu – 100 triệu đồng</li>
+            <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: green; margin-right: 10px;"></i> <strong>Thời gian vay:</strong> 6 tháng - 36 tháng</li>
+            <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: green; margin-right: 10px;"></i> <strong>Lãi suất phẳng (tham chiếu) tối đa:</strong> 35,4%/năm</li>
+        </ul>
+        <p style="margin-top: 15px; font-style: italic;">Kết quả ước tính dựa trên mức lãi suất phẳng (tham chiếu) 16,44%/năm:</p>
+        <div style="background: #fff; padding: 15px; border-radius: 5px; margin-top: 10px; border-left: 4px solid var(--secondary-color);">
+            <p style="margin-bottom: 5px;"><strong>Ví dụ:</strong> Khách hàng vay <strong>20.000.000đ</strong> trong <strong>18 tháng</strong>, với lãi suất phẳng <strong>16,44%/năm</strong>.</p>
+            <p style="margin-bottom: 5px;">👉 <strong>Tổng số tiền cần thanh toán:</strong> <span style="color: #d9534f; font-weight: bold;">25.110.000đ</span></p>
+            <p style="font-size: 0.9em; color: #666;">(Đã bao gồm các loại phí, trừ phí bảo hiểm không bắt buộc, phí chuyển tiền và phí trả nợ trước hạn).</p>
+        </div>
+        <p style="margin-top: 15px; font-weight: bold; color: var(--primary-color);"><i class="fas fa-info-circle"></i> SHBFinance không thu bất kỳ khoản phí nào cho đến khi khoản vay được giải ngân.</p>
+    </div>
 </section>
 
 <section id="goi-vay" class="loan-packages">
