@@ -68,6 +68,50 @@
         </div>
         <p style="margin-top: 15px; font-weight: bold; color: var(--primary-color);"><i class="fas fa-info-circle"></i> SHBFinance không thu bất kỳ khoản phí nào cho đến khi khoản vay được giải ngân.</p>
     </div>
+
+    <!-- Công cụ tính lãi suất -->
+    <div class="calculator-box" id="calculator">
+        <h3 style="color: var(--primary-color); text-align: center; margin-bottom: 20px;"><i class="fas fa-calculator"></i> Công Cụ Tính Lãi Suất</h3>
+        <div class="row" style="display: flex; flex-wrap: wrap; gap: 30px;">
+            <div style="flex: 1; min-width: 300px;">
+                <div class="form-group">
+                    <label>Số tiền cần vay (Triệu đồng):</label>
+                    <input type="number" id="calc-amount" placeholder="Nhập số tiền (10 - 100)" min="10" max="100" value="20" oninput="calculateLoan()">
+                </div>
+                <div class="form-group">
+                    <label>Thời hạn vay:</label>
+                    <select id="calc-term" onchange="calculateLoan()">
+                        <option value="6">6 Tháng</option>
+                        <option value="12">12 Tháng</option>
+                        <option value="18" selected>18 Tháng</option>
+                        <option value="24">24 Tháng</option>
+                        <option value="36">36 Tháng</option>
+                    </select>
+                </div>
+                <button onclick="calculateLoan()" class="btn-primary" style="width: 100%; margin-top: 10px;">Tính Toán Ngay</button>
+            </div>
+            <div style="flex: 1; min-width: 300px; background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #eee;">
+                <h4 style="margin-bottom: 15px; border-bottom: 2px solid #ddd; padding-bottom: 10px;">Kết Quả Ước Tính</h4>
+                <div class="result-row">
+                    <span>Khoản vay:</span>
+                    <strong id="res-amount">20.000.000 ₫</strong>
+                </div>
+                <div class="result-row">
+                    <span>Lãi suất (tham chiếu):</span>
+                    <strong>16.44%/năm</strong>
+                </div>
+                <div class="result-row">
+                    <span>Gốc + Lãi hàng tháng:</span>
+                    <strong id="res-monthly" style="color: var(--secondary-color); font-size: 1.3em;">1.395.000 ₫</strong>
+                </div>
+                <div class="result-row" style="border-top: 1px solid #ddd; margin-top: 10px; padding-top: 10px;">
+                    <span>Tổng tiền phải trả:</span>
+                    <strong id="res-total">25.110.000 ₫</strong>
+                </div>
+                <p style="font-size: 0.8em; color: #666; margin-top: 10px; font-style: italic;">* Kết quả tính toán chỉ mang tính chất tham khảo.</p>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section id="goi-vay" class="loan-packages">
@@ -180,5 +224,71 @@
         </form>
     </div>
 </section>
+
+<script>
+function calculateLoan() {
+    // Lấy giá trị đầu vào
+    let amountInput = document.getElementById('calc-amount').value;
+    let months = parseInt(document.getElementById('calc-term').value);
+    
+    // Kiểm tra giá trị hợp lệ (chỉ cảnh báo khi bấm nút, không cảnh báo khi đang nhập)
+    if (!amountInput || amountInput < 0) return;
+
+    let amount = parseFloat(amountInput) * 1000000;
+    let rate = 16.44 / 100; // Lãi suất 16.44%/năm
+
+    // Công thức tính lãi phẳng:
+    // Tổng lãi = Gốc * Lãi suất năm * (Số tháng / 12)
+    // Tổng phải trả = Gốc + Tổng lãi
+    // Trả hàng tháng = Tổng phải trả / Số tháng
+
+    let totalInterest = amount * rate * (months / 12);
+    let totalPayment = amount + totalInterest;
+    let monthlyPayment = totalPayment / months;
+
+    // Định dạng tiền tệ Việt Nam
+    const formatter = new Intl.NumberFormat('vi-VN', {
+        style: 'currency',
+        currency: 'VND'
+    });
+
+    document.getElementById('res-amount').innerText = formatter.format(amount);
+    document.getElementById('res-monthly').innerText = formatter.format(monthlyPayment);
+    document.getElementById('res-total').innerText = formatter.format(totalPayment);
+}
+</script>
+
+<!-- Popup Khuyến Mãi -->
+<div id="promo-popup" class="popup-overlay">
+    <div class="popup-content">
+        <span class="close-popup" onclick="closePopup()">&times;</span>
+        <div class="popup-header">
+            <i class="fas fa-coffee" style="font-size: 3em; color: #6f4e37; margin-bottom: 10px;"></i>
+            <h3>Mời Cafe - Tư Vấn Miễn Phí</h3>
+        </div>
+        <div class="popup-body">
+            <p>🎁 <strong>Tặng ngay 01 ly cafe</strong> khi khách hàng đến tư vấn trực tiếp 1-1.</p>
+            <p><i class="fas fa-map-marker-alt" style="color: var(--secondary-color);"></i> <strong>Địa chỉ:</strong> 478 Hai Bà Trưng, Trần Phú, Quảng Ngãi</p>
+            <p><i class="fas fa-clock" style="color: var(--secondary-color);"></i> <strong>Thời gian:</strong> Thứ 2 - Thứ 5 hàng tuần</p>
+            <a href="#lien-he" class="btn-primary" onclick="closePopup()" style="display: block; margin-top: 15px; text-align: center;">Đặt Lịch Ngay</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Hiển thị popup sau 2 giây nếu chưa đóng trong phiên làm việc
+    window.addEventListener('load', function() {
+        if (!sessionStorage.getItem('popupClosed')) {
+            setTimeout(function() {
+                document.getElementById('promo-popup').style.display = 'flex';
+            }, 2000);
+        }
+    });
+
+    function closePopup() {
+        document.getElementById('promo-popup').style.display = 'none';
+        sessionStorage.setItem('popupClosed', 'true');
+    }
+</script>
 
 <?php include 'footer.php'; ?>

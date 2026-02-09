@@ -1,11 +1,16 @@
 <?php include 'header.php'; ?>
-<main class="page-content container">
-    <div class="page-header">
-        <div class="container">
-            <h1>Liên Hệ Tư Vấn</h1>
-            <p>Chúng tôi luôn sẵn sàng hỗ trợ bạn 24/7</p>
-        </div>
+
+
+<section class="hero">
+    <div class="container">
+        <h1>Liên Hệ Tu Vấn Vay Tiền Mặt Tại Quảng Ngãi</h1>
+        <p><?php echo $contactConfig['slogan']; ?></p>
+        <p class="hero-subtitle">👉 “Chúng tôi luôn sẵn sàng hỗ trợ bạn 24/7”</p>
+        <a href="#lien-he" class="btn-primary"><i class="fas fa-paper-plane"></i> Đăng Ký Ngay</a>
     </div>
+</section>
+
+<main class="page-content container">
 
     <section class="container" style="padding-bottom: 50px;">
         <div style="display: flex; flex-wrap: wrap; gap: 30px;">
