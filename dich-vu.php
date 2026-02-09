@@ -1,11 +1,14 @@
 <?php include 'header.php'; ?>
-<main class="page-content container">
-    <div class="page-header">
-        <div class="container">
-            <h1>Các Gói Vay Tín Chấp</h1>
-            <p>Đa dạng hình thức vay phù hợp với mọi nhu cầu của bạn</p>
-        </div>
+<section class="hero">
+    <div class="container">
+        <h1>Các Gói Vay Tín Chấp tại Quảng Ngãi -SHB</h1>
+        <p><?php echo $contactConfig['slogan']; ?></p>
+        <p class="hero-subtitle">👉 “Đa dạng hình thức vay phù hợp với mọi nhu cầu của bạn”</p>
+        <a href="#lien-he" class="btn-primary"><i class="fas fa-paper-plane"></i> Đăng Ký Ngay</a>
     </div>
+</section>
+<main class="page-content container">
+
     <section class="loan-packages" style="background: #fff;">
         <div class="container">
             <h2 class="section-title">Các Gói Vay Phổ Biến</h2>
@@ -62,19 +65,19 @@
             <div class="col-half">
                 <h4><i class="fas fa-tasks"></i> Quy Trình Vay</h4>
                 <ol>
-                    <li><strong>Đăng Ký:</strong> Liên hệ qua Zalo hoặc Hotline.</li>
-                    <li><strong>Tư Vấn:</strong> Nhân viên tư vấn gói vay phù hợp nhất.</li>
-                    <li><strong>Thẩm Định:</strong> Cung cấp hồ sơ đơn giản (CMND, SHK...).</li>
+                    <li><strong>Đăng Ký:</strong> Liên hệ qua Zalo <a href="https://zalo.me/0987618090" target="_blank">Phạm Yến Dương</a> hoặc <a href="tel:0987618090">098.761.8090</a>.</li>
+                    <li><strong>Tư Vấn:</strong> Yến sẽ tư vấn gói vay phù hợp nhất.</li>
+                    <li><strong>Thẩm Định:</strong> Cung cấp hồ sơ đơn giản (CCCD, SHK...).</li>
                     <li><strong>Giải Ngân:</strong> Nhận tiền trong vòng 1-2 giờ.</li>
                 </ol>
             </div>
             <div class="col-half">
                 <h4><i class="fas fa-gavel"></i> Điều Kiện Cơ Bản</h4>
-                <ul>
+                <ul style="list-style: none;">
                     <li><i class="fas fa-check"></i> Công dân Việt Nam 20-60 tuổi.</li>
                     <li><i class="fas fa-check"></i> Sống và làm việc tại Quảng Ngãi.</li>
                     <li><i class="fas fa-check"></i> Có thu nhập ổn định.</li>
-                    <li><i class="fas fa-check"></i> Không có nợ xấu nhóm 3 trở lên.</li>
+                    <li><i class="fas fa-check"></i> Không có nợ xấu nhóm 3 trở lên, Yến sẽ check thông tin trên Ngân hàng dữ liệu và sẽ loại trừ theo SDT hoặc CCCD.</li>
                 </ul>
             </div>
         </div>
