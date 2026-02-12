@@ -19,6 +19,10 @@ $seoConfig = [
     'lien-he' => [
         'title' => 'Liên Hệ Tư Vấn Vay Tiền - Hỗ Trợ 24/7',
         'description' => 'Liên hệ ngay với chúng tôi để được tư vấn khoản vay phù hợp nhất. Hotline hỗ trợ 24/7, giải đáp mọi thắc mắc về thủ tục và lãi suất.'
+    ],
+    'chinh-sach-bao-mat' => [
+        'title' => 'Chính Sách Bảo Mật Thông Tin - VayNhanhQN',
+        'description' => 'Cam kết bảo mật thông tin khách hàng và tuân thủ quy định bảo vệ dữ liệu cá nhân của SHBFinance. Xem chi tiết chính sách tại đây.'
     ]
 ];
 ?>
