@@ -31,6 +31,10 @@ $seoConfig = [
     'tuyen-dung' => [
         'title' => 'Tuyển Dụng CTV Tài Chính Quảng Ngãi - Hoa Hồng Cao',
         'description' => 'Tuyển cộng tác viên giới thiệu khách vay tiền mặt tại Quảng Ngãi. Cơ chế hoa hồng hấp dẫn, thanh toán nhanh, không cần vốn, thời gian linh hoạt.'
+    ],
+   'cau-hoi-thuong-gap' => [
+        'title' => 'Câu hỏi thường gặp khi vay tiền tại  Quảng Ngãi',
+        'description' => 'Tổng hợp các câu hỏi thường gặp và giải đáp thắc mắc về dịch vụ vay tiền mặt tại  Quảng Ngãi. '
     ]
 ];
 ?>

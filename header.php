@@ -58,6 +58,7 @@ $currentSeo = $seoConfig[$currentPage] ?? $seoConfig['default'];
                             <a href="pages/dich-vu/gioi-thieu-app-banking.html"><i class="fas fa-mobile-alt"></i> Hướng dẫn vay qua App SHB</a>
                             <a href="pages/dich-vu/tat-toan-khoan-vay.html"><i class="fas fa-check-double"></i> Hướng dẫn tất toán</a>
                             <a href="pages/dich-vu/no-qua-han.html"><i class="fas fa-exclamation-triangle"></i> Tìm hiểu nợ quá hạn</a>
+                            <a href="cau-hoi-thuong-gap"><i class="fas fa-question-circle"></i> Câu hỏi thường gặp</a>
                         </div>
                     </li>
                     <li class="dropdown">
