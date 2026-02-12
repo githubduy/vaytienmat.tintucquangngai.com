@@ -31,6 +31,14 @@
         <i class="fas fa-external-link-alt"></i> Xem Điều Khoản Đầy Đủ của SHB FC
     </a>
 
+    <h2 style="margin-top: 30px;">Bảo Vệ Dữ Liệu Cá Nhân</h2>
+    <p>
+        Chúng tôi tuân thủ nghiêm ngặt các quy định về bảo vệ dữ liệu cá nhân. Quý khách hàng vui lòng tham khảo "Điều khoản và Điều kiện về Bảo vệ và Xử lý Dữ liệu Cá nhân" của SHBFinance tại đây:
+    </p>
+    <a href="https://static-files.shbfinance.com.vn/uploads/Terms%20and%20Conditions%20on%20the%20Protection%20and%20Processing%20of%20Personal%20Data%20of%20SHBFinance.pdf" target="_blank" class="btn-primary" style="background: #28a745; margin-top: 15px;">
+        <i class="fas fa-user-shield"></i> Chính Sách Bảo Vệ Dữ Liệu (PDF)
+    </a>
+
     <h2>Trách Nhiệm Của Chúng Tôi</h2>
     <p>
         Chúng tôi cam kết:

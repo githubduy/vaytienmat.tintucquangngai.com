@@ -53,7 +53,13 @@ $currentSeo = $seoConfig[$currentPage] ?? $seoConfig['default'];
                             <a href="pages/dich-vu/no-qua-han.html"><i class="fas fa-exclamation-triangle"></i> Tìm hiểu nợ quá hạn</a>
                         </div>
                     </li>
-                    <li><a href="dieu-khoan" class="<?php echo ($currentPage == 'dieu-khoan') ? 'active' : ''; ?>"><i class="fas fa-file-contract"></i> Điều khoản</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn <?php echo ($currentPage == 'dieu-khoan') ? 'active' : ''; ?>" onclick="toggleDropdown(this)"><i class="fas fa-file-contract"></i> Điều khoản <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="dieu-khoan"><i class="fas fa-file-alt"></i> Điều khoản sử dụng</a>
+                            <a href="https://static-files.shbfinance.com.vn/uploads/Terms%20and%20Conditions%20on%20the%20Protection%20and%20Processing%20of%20Personal%20Data%20of%20SHBFinance.pdf" target="_blank"><i class="fas fa-user-shield"></i> Bảo vệ dữ liệu (SHB)</a>
+                        </div>
+                    </li>
                     <li><a href="lien-he" class="<?php echo ($currentPage == 'lien-he') ? 'active' : ''; ?>"><i class="fas fa-envelope"></i> Liên hệ</a></li>
                 </ul>
             </div>
