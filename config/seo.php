@@ -23,6 +23,14 @@ $seoConfig = [
     'chinh-sach-bao-mat' => [
         'title' => 'Chính Sách Bảo Mật Thông Tin - VayNhanhQN',
         'description' => 'Cam kết bảo mật thông tin khách hàng và tuân thủ quy định bảo vệ dữ liệu cá nhân của SHBFinance. Xem chi tiết chính sách tại đây.'
+    ],
+    'tac-gia-duong-yen' => [
+        'title' => 'Dương Yến - Chuyên Viên Tư Vấn SHB Finance Quảng Ngãi',
+        'description' => 'Thông tin về Dương Yến - Chủ sở hữu website. Chuyên viên tư vấn vay tín chấp chính thức của SHB Finance tại Quảng Ngãi. Uy tín, tận tâm, không thu phí.'
+    ],
+    'tuyen-dung' => [
+        'title' => 'Tuyển Dụng CTV Tài Chính Quảng Ngãi - Hoa Hồng Cao',
+        'description' => 'Tuyển cộng tác viên giới thiệu khách vay tiền mặt tại Quảng Ngãi. Cơ chế hoa hồng hấp dẫn, thanh toán nhanh, không cần vốn, thời gian linh hoạt.'
     ]
 ];
 ?>

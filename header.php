@@ -43,7 +43,14 @@ $currentSeo = $seoConfig[$currentPage] ?? $seoConfig['default'];
 
                 <ul class="nav-links">
                     <li><a href="index" class="<?php echo ($currentPage == 'index') ? 'active' : ''; ?>"><i class="fas fa-home"></i> Trang chủ</a></li>
-                    <li><a href="gioi-thieu" class="<?php echo ($currentPage == 'gioi-thieu') ? 'active' : ''; ?>"><i class="fas fa-info-circle"></i> Giới thiệu</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn <?php echo ($currentPage == 'gioi-thieu' || $currentPage == 'tac-gia-duong-yen' || $currentPage == 'tuyen-dung') ? 'active' : ''; ?>" onclick="toggleDropdown(this)"><i class="fas fa-info-circle"></i> Giới thiệu <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="gioi-thieu"><i class="fas fa-building"></i> Về VayNhanhQN</a>
+                            <a href="tac-gia-duong-yen"><i class="fas fa-user-tie"></i> Tác Giả Dương Yến</a>
+                            <a href="tuyen-dung"><i class="fas fa-users"></i> Tuyển Dụng CTV</a>
+                        </div>
+                    </li>
                     <li><a href="dich-vu" class="<?php echo ($currentPage == 'dich-vu') ? 'active' : ''; ?>"><i class="fas fa-hand-holding-usd"></i> Gói vay</a></li>
                     <li class="dropdown">
                         <a href="javascript:void(0)" class="dropbtn" onclick="toggleDropdown(this)"><i class="fas fa-headset"></i> Hỗ trợ <i class="fas fa-caret-down"></i></a>
