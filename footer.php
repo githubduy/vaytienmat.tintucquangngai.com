@@ -44,9 +44,9 @@ if (!isset($contactConfig) && file_exists('config/contact.php')) {
         const form = document.getElementById(formId);
         const formData = new FormData(form);
         const btn = form.querySelector('button[type="submit"]');
-        const originalText = btn.innerText;
+        const originalHTML = btn.innerHTML;
         
-        btn.innerText = 'Đang gửi...';
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang gửi...';
         btn.disabled = true;
 
         fetch('api/send-contact.php', {
@@ -56,21 +56,34 @@ if (!isset($contactConfig) && file_exists('config/contact.php')) {
         .then(response => response.json())
         .then(data => {
             if (data.status === 'success') {
-                alert('Gửi thông tin thành công! Chúng tôi sẽ liên hệ lại sớm.');
-                form.reset();
+                // Chuyển hướng sang trang cảm ơn
+                window.location.href = 'cam-on';
             } else {
                 alert('Có lỗi xảy ra: ' + data.message);
+                btn.innerHTML = originalHTML;
+                btn.disabled = false;
             }
         })
         .catch(error => {
             console.error('Error:', error);
             alert('Có lỗi kết nối, vui lòng thử lại sau.');
-        })
-        .finally(() => {
-            btn.innerText = originalText;
+            btn.innerHTML = originalHTML;
             btn.disabled = false;
         });
     }
+
+    // Theo dõi sự kiện nhấp vào số điện thoại (Call Tracking)
+    document.addEventListener('DOMContentLoaded', function() {
+        var telLinks = document.querySelectorAll('a[href^="tel:"]');
+        telLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                // Vui lòng thay 'CONVERSION_LABEL' bằng nhãn chuyển đổi cuộc gọi thực tế từ Google Ads
+                if (typeof gtag === 'function') {
+                    gtag('event', 'conversion', {'send_to': 'AW-17948533999/CONVERSION_LABEL'});
+                }
+            });
+        });
+    });
     </script>
 </body>
 </html>

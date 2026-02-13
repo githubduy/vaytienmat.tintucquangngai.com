@@ -28,7 +28,7 @@ $currentSeo = $seoConfig[$currentPage] ?? $seoConfig['default'];
     <header>
         <div class="top-bar">
             <div class="container">
-                <span><i class="fas fa-phone-alt"></i> Hotline: <?php echo $contactConfig['phone_display']; ?></span>
+                <span><i class="fas fa-phone-alt"></i> Hotline: <a href="tel:<?php echo $contactConfig['phone']; ?>" style="color: inherit; text-decoration: none;"><?php echo $contactConfig['phone_display']; ?></a></span>
                 <span><i class="fas fa-envelope"></i> <?php echo $contactConfig['email']; ?></span>
                 <span class="header-slogan hidden-mobile"> - <?php echo $contactConfig['slogan']; ?></span>
             </div>

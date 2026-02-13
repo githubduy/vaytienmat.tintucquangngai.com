@@ -35,6 +35,10 @@ $seoConfig = [
    'cau-hoi-thuong-gap' => [
         'title' => 'Câu hỏi thường gặp khi vay tiền tại  Quảng Ngãi',
         'description' => 'Tổng hợp các câu hỏi thường gặp và giải đáp thắc mắc về dịch vụ vay tiền mặt tại  Quảng Ngãi. '
+    ],
+    'cam-on' => [
+        'title' => 'Đăng Ký Thành Công - VayNhanhQN',
+        'description' => 'Cảm ơn bạn đã đăng ký tư vấn vay tiền. Chúng tôi sẽ liên hệ lại trong thời gian sớm nhất.'
     ]
 ];
 ?>
