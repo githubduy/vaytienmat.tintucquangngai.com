@@ -1,5 +1,19 @@
 <?php include 'header.php'; ?>
+<?php
+require_once 'config/seo.php';
+$page = $_GET['page'] ?? 'index';
 
+// Kiểm tra: Nếu trang không nằm trong danh sách SEO Config thì báo lỗi 404
+if (!array_key_exists($page, $seoConfig)) {
+    header("HTTP/1.0 404 Not Found");
+    include '404.php';
+    exit;
+}
+
+include 'header.php'; 
+?>
+
+<?php if ($page == 'index'): ?>
 <section class="hero">
     <div class="container">
         <h1>Hỗ Trợ Vay Tiền Mặt Tại Quảng Ngãi</h1>
@@ -290,5 +304,23 @@ function calculateLoan() {
         sessionStorage.setItem('popupClosed', 'true');
     }
 </script>
+
+<?php else: ?>
+    <!-- Khu vực hiển thị nội dung các trang con (Giới thiệu, Liên hệ...) -->
+    <div class="container content-block">
+        <?php
+        $file = "pages/$page.php";
+        if (file_exists($file)) {
+            include $file;
+        } else {
+            echo '<div style="text-align:center; padding: 50px 0;">';
+            echo '<h2>Nội dung đang cập nhật</h2>';
+            echo '<p>Trang này đang được xây dựng. Vui lòng quay lại sau.</p>';
+            echo '<a href="/" class="btn-primary">Về Trang Chủ</a>';
+            echo '</div>';
+        }
+        ?>
+    </div>
+<?php endif; ?>
 
 <?php include 'footer.php'; ?>
