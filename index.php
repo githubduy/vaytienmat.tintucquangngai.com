@@ -1,4 +1,3 @@
-<?php include 'header.php'; ?>
 <?php
 require_once 'config/seo.php';
 $page = $_GET['page'] ?? 'index';
