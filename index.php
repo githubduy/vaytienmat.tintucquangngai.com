@@ -2,12 +2,6 @@
 require_once 'config/seo.php';
 $page = $_GET['page'] ?? 'index';
 
-// Kiểm tra: Nếu trang không nằm trong danh sách SEO Config thì báo lỗi 404
-if (!array_key_exists($page, $seoConfig)) {
-    header("HTTP/1.0 404 Not Found");
-    include '404.php';
-    exit;
-}
 
 include 'header.php'; 
 ?>
