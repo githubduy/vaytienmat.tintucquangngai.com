@@ -2,6 +2,17 @@
 require_once 'config/seo.php';
 $page = $_GET['page'] ?? 'index';
 
+// 1. Bảo mật: Chặn hành vi leo thang thư mục (Path Traversal)
+if (strpos($page, '..') !== false) {
+    die('Invalid request');
+}
+
+// 2. Xử lý các trang HTML tĩnh (như các bài hướng dẫn trong pages/dich-vu/)
+$htmlFile = "pages/$page.html";
+if (file_exists($htmlFile)) {
+    readfile($htmlFile); // Đọc nội dung file HTML và trả về trình duyệt
+    exit; // Dừng script tại đây để không load thêm header/footer của index.php
+}
 
 include 'header.php'; 
 ?>
