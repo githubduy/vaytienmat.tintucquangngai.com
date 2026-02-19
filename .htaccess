@@ -5,17 +5,15 @@
     # Bảo mật: Chặn truy cập trực tiếp vào thư mục config chứa thông tin nhạy cảm
     RewriteRule ^config/ - [F,L]
 
-    # 1. Chuyển hướng (Redirect) 301: /index hoặc /index.php về domain gốc
-    # Giúp URL gọn gàng và tránh trùng lặp nội dung (Duplicate Content)
-    RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+index(\.php)?\s [NC]
-    RewriteRule ^index(\.php)?$ / [R=301,L]
+    # 1. Chuyển hướng index.php về trang chủ (/) để tránh trùng lặp nội dung
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+index\.php\s [NC]
+    RewriteRule ^index\.php$ / [R=301,L]
 
-    # 2. Xử lý trang chủ: Domain gốc -> gọi index.php với tham số page=index
-    # Điều này đảm bảo code PHP nhận được tham số 'index' để tải đúng dữ liệu từ config/seo.php
+    # 2. Xử lý trang chủ
     RewriteRule ^$ index.php?page=index [L]
 
-    # 3. Xử lý các trang con (Pretty URLs): /ten-trang -> index.php?page=ten-trang
-    # Chỉ rewrite nếu đường dẫn không phải là file hoặc thư mục thực tế (như style.css, images...)
+    # 3. Xử lý các trang con: Chuyển mọi đường dẫn không phải file/thư mục thực về index.php
+    # Ví dụ: /gioi-thieu -> index.php?page=gioi-thieu
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ index.php?page=$1 [L,QSA]
